@@ -44,7 +44,7 @@ public class Radio {
         if (currentStation < maxStation) {
             currentStation = currentStation + 1;
         } else {
-            currentStation = 0;
+            currentStation = minStation; // Исправлен недочет.
         }
     }
 
@@ -52,7 +52,7 @@ public class Radio {
         if (currentStation > minStation) {
             currentStation = currentStation - 1;
         } else {
-            currentStation = 9;
+            currentStation = maxStation; // Исправлен недочет.
         }
     }
 
