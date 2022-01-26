@@ -2,13 +2,27 @@ public class Radio {
 
     // Создание полей
 
+    private int stationsQuantity;
     private int minStation = 0;
     private int maxStation = 9;
     private int currentStation;
 
     private int minVolume = 0;
-    private int maxVolume = 10;
+    private int maxVolume = 100;
     private int currentVolume;
+
+    public int getStationsQuantity() {
+        return stationsQuantity;
+    }
+
+    // Создание конструкторов
+
+    public Radio() {
+    }
+
+    public Radio(int stationsQuantity) {
+        this.stationsQuantity = stationsQuantity;
+    }
 
     //Работа с радиостанциями
 
@@ -50,10 +64,10 @@ public class Radio {
     }
 
     public void setCurrentVolume(int currentVolume) {
-        if (currentVolume < 0) {
+        if (currentVolume < minVolume) {
             return;
         }
-        if (currentVolume > 10) {
+        if (currentVolume > maxVolume) {
             return;
         }
         this.currentVolume = currentVolume;
@@ -73,4 +87,5 @@ public class Radio {
             currentVolume = currentVolume - 1;
         }
     }
+
 }
