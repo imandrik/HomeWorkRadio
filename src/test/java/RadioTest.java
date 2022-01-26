@@ -6,23 +6,13 @@ class RadioTest {
 
     // Тестирование работы переключения радиостанций.
 
-
     // Прямое указание количества радиостанций (новый тест)
 
     @Test
-    public void shouldSetStationsQuantity() {
+    public void setStationsQuantity() {
         Radio radio = new Radio(15);
 
         assertEquals(15, radio.getStationsQuantity());
-    }
-
-    @Test
-    public void setStation() {
-        Radio radio = new Radio();
-
-        radio.setCurrentStation(4);
-
-        assertEquals(4, radio.getCurrentStation());
     }
 
     // Включение радиостанции через прямое указание номера за пределами верхних границ.
@@ -110,7 +100,6 @@ class RadioTest {
     }
 
     // Увеличение уровня громкости при максимальном значении (обновлен с учетом изменения условий задачи).
-
     @Test
     public void increaseMaxLimitVolume() {
         Radio radio = new Radio();

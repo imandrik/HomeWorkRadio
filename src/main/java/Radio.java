@@ -1,3 +1,11 @@
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
+@NoArgsConstructor
+@Data
+
 public class Radio {
 
     // Создание полей
@@ -11,24 +19,13 @@ public class Radio {
     private int maxVolume = 100;
     private int currentVolume;
 
-    public int getStationsQuantity() {
-        return stationsQuantity;
-    }
-
     // Создание конструкторов
-
-    public Radio() {
-    }
 
     public Radio(int stationsQuantity) {
         this.stationsQuantity = stationsQuantity;
     }
 
     //Работа с радиостанциями
-
-    public int getCurrentStation() {
-        return currentStation;
-    }
 
     public void setCurrentStation(int currentStation) {
         if (currentStation < minStation) {
@@ -58,11 +55,6 @@ public class Radio {
 
     // Работа с уровнем громкости
 
-
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
-
     public void setCurrentVolume(int currentVolume) {
         if (currentVolume < minVolume) {
             return;
@@ -79,7 +71,6 @@ public class Radio {
         if (currentVolume < maxVolume) {
             currentVolume = currentVolume + 1;
         }
-
     }
 
     public void reduceVolume() {
@@ -87,5 +78,4 @@ public class Radio {
             currentVolume = currentVolume - 1;
         }
     }
-
 }
