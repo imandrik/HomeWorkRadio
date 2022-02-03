@@ -10,7 +10,6 @@ public class Radio {
 
     // Создание полей
 
-    private int stationsQuantity;
     private int minStation = 0;
     private int maxStation = 9;
     private int currentStation;
@@ -19,10 +18,11 @@ public class Radio {
     private int maxVolume = 100;
     private int currentVolume;
 
-    // Создание конструкторов
+    // Создание конструктора
 
-    public Radio(int stationsQuantity) {
-        this.stationsQuantity = stationsQuantity;
+    public Radio(int createNewStationsQuantity) {
+        this.currentStation = createNewStationsQuantity;
+        maxStation = createNewStationsQuantity - 1;
     }
 
     //Работа с радиостанциями
