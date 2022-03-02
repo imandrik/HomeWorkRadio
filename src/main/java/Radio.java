@@ -1,8 +1,8 @@
+
 public class Radio {
 
     // Создание полей
 
-    private int stationsQuantity;
     private int minStation = 0;
     private int maxStation = 9;
     private int currentStation;
@@ -11,20 +11,38 @@ public class Radio {
     private int maxVolume = 100;
     private int currentVolume;
 
-    public int getStationsQuantity() {
-        return stationsQuantity;
-    }
-
-    // Создание конструкторов
+    // Создание конструктора
 
     public Radio() {
     }
 
-    public Radio(int stationsQuantity) {
-        this.stationsQuantity = stationsQuantity;
+    public Radio(int createNewStationsQuantity) {
+        maxStation = createNewStationsQuantity - 1;
     }
 
-    //Работа с радиостанциями
+    // Getters
+
+    public int getMaxStation() {
+        return maxStation;
+    }
+
+    public int getMinStation() {
+        return minStation;
+    }
+
+    public int getMinVolume() {
+        return minVolume;
+    }
+
+    public int getMaxVolume() {
+        return maxVolume;
+    }
+
+    public int getCurrentVolume() {
+        return currentVolume;
+    }
+
+    // Работа с радиостанциями
 
     public int getCurrentStation() {
         return currentStation;
@@ -44,7 +62,7 @@ public class Radio {
         if (currentStation < maxStation) {
             currentStation = currentStation + 1;
         } else {
-            currentStation = 0;
+            currentStation = minStation;
         }
     }
 
@@ -52,16 +70,11 @@ public class Radio {
         if (currentStation > minStation) {
             currentStation = currentStation - 1;
         } else {
-            currentStation = 9;
+            currentStation = maxStation;
         }
     }
 
-    // Работа с уровнем громкости
-
-
-    public int getCurrentVolume() {
-        return currentVolume;
-    }
+    //Работа с уровнем громкости
 
     public void setCurrentVolume(int currentVolume) {
         if (currentVolume < minVolume) {
@@ -72,8 +85,6 @@ public class Radio {
         }
         this.currentVolume = currentVolume;
     }
-
-    // Работа с уровнем громкости
 
     public void increaseVolume() {
         if (currentVolume < maxVolume) {
@@ -87,5 +98,6 @@ public class Radio {
             currentVolume = currentVolume - 1;
         }
     }
+
 
 }
